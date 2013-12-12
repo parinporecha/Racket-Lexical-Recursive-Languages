@@ -1,0 +1,27 @@
+#lang racket
+
+(define per_cost 180)
+(define att_cost 0.04)
+(define people 120)
+(define increase_attendance 15)
+(define price_decrease 0.10)
+(define per_ticket_price 5.00)
+
+
+(define (profit ticket-price)
+  (- (revenue ticket-price)
+     (cost ticket-price)))
+
+(define (revenue ticket-price)
+  (*  (attendees ticket-price) ticket-price))
+
+(define (cost ticket-price)
+  (+ per_cost 
+     (* att_cost (attendees ticket-price))))
+
+(define (attendees ticket-price)
+  (+ people
+     (* (/ increase_attendance price_decrease) (- per_ticket_price ticket-price))))
+
+
+(provide profit revenue cost attendees)

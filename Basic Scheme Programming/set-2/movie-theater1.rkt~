@@ -1,0 +1,39 @@
+#lang racket
+
+(define (profit ticket-price)
+  (- (revenue ticket-price)
+     (cost ticket-price)))
+
+(define (revenue ticket-price)
+  (*  (attendees ticket-price) ticket-price))
+
+(define (cost ticket-price)
+  (+ 180 
+     (* .04 (attendees ticket-price))))
+
+
+(define (attendees ticket-price)
+  (if(> ticket-price 5.8)
+   	0 
+     ( + 120 ( * ( / ( - 5 ticket-price ) 0.10 ) 15 ) ) ) )
+
+
+(provide attendees cost revenue profit)
+
+
+;; at $5.00, 120 people will attend.
+;; at $4.00, 270 people will attend.
+;; at $3.00, 420 people will attend.
+
+;; at $3.00, it costs $196.80 per show.
+;; at $4.00, it costs $190.80 per show.
+;; at $5.00, it costs $184.80 per show.
+
+;; at $3.00, the movie owner makes $1260 per show
+;; at $4.00, the movie owner makes $1080 per show
+;; at $5.00, the movie owner makes $600 per show
+
+;; the best price is $3.00
+
+
+

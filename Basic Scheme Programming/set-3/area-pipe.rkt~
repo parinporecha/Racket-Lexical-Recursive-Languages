@@ -1,0 +1,5 @@
+#lang racket
+
+;;; area-pipe :: number, number, number -> number
+(provide/contract 
+ [area-pipe (-> number? number? number? number?)])

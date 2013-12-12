@@ -1,0 +1,22 @@
+#lang racket
+
+(define (profit ticket-price)
+  ( - (revenue ticket-price) (cost ticket-price)))
+
+
+(define (revenue ticket-price)
+  ( * (attendees ticket-price) ticket-price))
+
+
+(define (cost ticket-price)
+  ( * (attendees ticket-price) 1.5 ))
+
+
+
+(define (attendees ticket-price)
+  (+ 120
+     (* (/ 15 .10) (- 5.00 ticket-price))))
+
+
+
+(provide profit revenue cost attendees)

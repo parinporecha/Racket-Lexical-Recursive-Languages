@@ -1,0 +1,5 @@
+#lang racket
+
+;;; total-profit :: number -> number
+(provide/contract 
+ [total-profit (-> number? number?)])

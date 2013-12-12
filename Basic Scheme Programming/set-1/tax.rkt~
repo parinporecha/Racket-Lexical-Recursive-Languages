@@ -1,0 +1,9 @@
+#lang racket
+
+;;; tax :: number -> number
+(provide/contract 
+ [tax (-> number? number?)])
+
+(define tax
+   (lambda(pay)
+      (/ (* pay 15) 100)))

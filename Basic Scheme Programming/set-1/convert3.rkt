@@ -1,0 +1,9 @@
+#lang racket
+
+;;; convert3 :: number, number, number -> number
+
+(define convert3
+   (lambda(digit1 digit2 digit3)
+      (+ (* 100 digit3) (* 10 digit2) digit1)))
+
+(provide convert3)

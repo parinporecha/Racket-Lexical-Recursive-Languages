@@ -1,0 +1,5 @@
+#lang racket
+
+;;; sum-coins :: number -> number
+(provide/contract 
+ [sum-coins (-> number? number?)])

@@ -1,0 +1,9 @@
+#lang racket
+
+;;; dollar->euro :: number -> number
+(provide/contract 
+ [dollar->euro (-> number? number?)])
+
+(define dollar->euro
+   (lambda(x)
+      (* x 0.76)))
